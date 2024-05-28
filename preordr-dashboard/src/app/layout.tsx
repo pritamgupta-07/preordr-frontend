@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import StoreProvider from "../components/storeProvider";
+import MUIThemeProvider from "../components/themeProvider";
 
 export const metadata: Metadata = {
   title: "Welcome to preOrdr Dashboard",
@@ -16,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <StoreProvider>
+          <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+            <MUIThemeProvider>{children}</MUIThemeProvider>
+          </AppRouterCacheProvider>
+        </StoreProvider>
+      </body>
     </html>
   );
 }
