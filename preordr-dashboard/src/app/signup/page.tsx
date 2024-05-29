@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import {
   Box,
@@ -11,11 +12,10 @@ import {
 } from "@mui/material";
 import { tokens } from "@/theme/theme";
 import { useAppSelector } from "@/lib/store/hooks";
-import signup from "@/images/signup.svg";
+import Image from "next/image";
 
-console.log(signup);
 
-export default function SignIn() {
+export default function SignUp() {
   const mode = useAppSelector((state) => state.colorMode.mode);
 
   const theme = useTheme();
@@ -59,7 +59,7 @@ export default function SignIn() {
           }}
         >
           <Box sx={{ width: 400 }}>
-            <img src={signup.src} />
+            <Image src="/signup.svg" alt="signup image" width={400} height={400}/>
           </Box>
         </Grid>
 
@@ -76,7 +76,7 @@ export default function SignIn() {
         >
           <Box width={`100%`} p={1}>
             <Typography
-              variant="h1"
+              variant="h2"
               textAlign={`center`}
               sx={{ fontWeight: "bold" }}
             >
@@ -136,6 +136,7 @@ export default function SignIn() {
                   my: 1.5,
                   fontSize: "1rem",
                   fontWeight: "600",
+                  display: "flex",
                   color: colors.background[100],
                   background: colors.background[900],
                   "&:hover": {
@@ -144,6 +145,7 @@ export default function SignIn() {
                   },
                 }}
               >
+                 <Image style={{padding: "0 8px 0 0"}} src="/google.svg" alt="google signup icon" width={32} height={32}/>
                 Login with google
               </Button>
             </Box>
