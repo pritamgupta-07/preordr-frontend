@@ -7,7 +7,7 @@ export interface ModeState {
 }
 
 const initialState: ModeState = {
-    mode: 'dark',
+    mode: 'light',
   };
   
   const modeSlice = createSlice({
