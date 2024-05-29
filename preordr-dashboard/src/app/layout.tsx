@@ -19,7 +19,9 @@ export default function RootLayout({
       <body>
         <StoreProvider>
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <MUIThemeProvider>{children}</MUIThemeProvider>
+            <MUIThemeProvider>
+              {children}
+            </MUIThemeProvider>
           </AppRouterCacheProvider>
         </StoreProvider>
       </body>
