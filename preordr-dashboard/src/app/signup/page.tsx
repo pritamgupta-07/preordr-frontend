@@ -112,7 +112,7 @@ export default function SignIn() {
                 sx={{
                   py: 1,
                   my: 1.5,
-                  fontSize: "1.2rem",
+                  fontSize: "1rem",
                   fontWeight: "600",
                   color: colors.background[100],
                   background: colors.secondary[700],
@@ -135,7 +135,7 @@ export default function SignIn() {
                 sx={{
                   py: 1,
                   my: 1.5,
-                  fontSize: "1.2rem",
+                  fontSize: "1rem",
                   fontWeight: "600",
                   color: colors.background[100],
                   background: colors.background[900],
