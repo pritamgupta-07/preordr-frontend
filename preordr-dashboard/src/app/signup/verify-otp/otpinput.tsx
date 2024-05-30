@@ -29,7 +29,7 @@ const OTPInput: OTPInputProps = ({ length = 4, onOTPSubmit = () => {} }) => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     i: number
   ) => {
-    const value = e.target.value;
+    const value = e.target.value.replace(/[^0-9]/g, ''); // Only allow numeric values
 
     const newArr = [...otp];
 
@@ -90,18 +90,14 @@ const OTPInput: OTPInputProps = ({ length = 4, onOTPSubmit = () => {} }) => {
             sx={{
               height: { xs: "40px", md: "60px" },
               width: { xs: "40px", md: "60px" },
+              fontSize: "24px",
+              textAlign: "center",
             }}
             onChange={(e) => handleChange(e, i)}
             onClick={() => handleClick(i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
             inputProps={{ maxLength: 1 }}
-            type="number"
-            sx={{
-              width: "50px",
-              height: "50px",
-              fontSize: "24px",
-              textAlign: "center",
-            }}
+            type="text"
           />
         );
       })}
