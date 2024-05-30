@@ -23,4 +23,5 @@ body,
 .otp-container input::-webkit-inner-spin-button,
 input::-webkit-outer-placeholder {
   display: none;
+  opacity: 0;
 }

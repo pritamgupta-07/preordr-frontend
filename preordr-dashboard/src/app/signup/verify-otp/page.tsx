@@ -1,34 +1,32 @@
 "use client";
-import {
-  Container,
-  Box,
-  useTheme,
-  Typography,
-  Input,
-  OutlinedInput,
-} from "@mui/material";
-import React from "react";
+import { Container, Box, useTheme, Typography, Button } from "@mui/material";
+import React, { FC } from "react";
 import { tokens } from "@/theme/theme";
 import { useAppSelector } from "@/lib/store/hooks";
-import OTPInput from "./input";
+import OTPInput from "./otpinput";
 
-const page = () => {
+const page: FC = () => {
   const mode = useAppSelector((state) => state.colorMode.mode);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  // Submitting the otp
+  const onOTPSubmit = (otp: string) => {
+    console.log("Submitted OTP is :", otp);
+  };
+
   return (
     <Container
       maxWidth="sm"
       sx={{
-        background: "grey",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         height: "100vh",
       }}
     >
-      <Box sx={{ p: 4, width: "100%", py: 10 }}>
+      <Box sx={{ p: 4, width: "100%", py: 10, borderRadius: "12px" }} className="box-shadow">
         {/* Icon  */}
         <Box
           component={"div"}
@@ -67,8 +65,39 @@ const page = () => {
             Enter OTP
           </Typography>
 
-          <Box component={"form"}>
-            <OTPInput />
+          <Box
+            component={"form"}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+            }}
+          >
+            <OTPInput length={4} onOTPSubmit={onOTPSubmit} />
+
+            <Box sx={{mx: "auto", width: "50%"}}>
+              <Button
+                variant="contained"
+                sx={{
+                  py: 1, 
+                  my: 2,
+                  fontSize: { xs: ".8rem", sm: "1rem" },
+                  fontWeight: "600",
+                  color: colors.background[100],
+                  background: colors.background[900],
+                  "&:hover": {
+                    backgroundColor: colors.background[900],
+                    cursor: "pointer",
+                  },
+                  width: "100%"
+                }}
+              >
+                Verify 
+                <Box component="span" sx={{pl: 1, display: "flex", alignItems: "center"}}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960"  fill="#e8eaed"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                </Box>
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Box>
