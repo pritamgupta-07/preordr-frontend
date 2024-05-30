@@ -30,7 +30,7 @@ export default function SignUp() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        height: {xs: "100vh", sm: "auto", md: "100vh"}
       }}
     >
       {/* Box container */}
@@ -40,10 +40,8 @@ export default function SignUp() {
         className="box-shadow"
         spacing={1}
         sx={{
-          p: 10,
-          display: "flex",
+          p:  {xs: 2, sm: 6},
           width: "100%",
-          justifyContent: "center",
           borderRadius: "12px",
         }}
       >
@@ -53,12 +51,13 @@ export default function SignUp() {
           xs={12}
           md={6}
           sx={{
+            py: 4,
             display: { xs: "none", sm: "flex" },
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Box sx={{ width: 400 }}>
+          <Box sx={{ width: 400, display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Image src="/signup.svg" alt="signup image" width={400} height={400}/>
           </Box>
         </Grid>
@@ -90,17 +89,17 @@ export default function SignUp() {
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "&:hover fieldset": {
-                      borderColor: colors.secondary[700], // Border color on hover
+                      borderColor: colors.secondary[500], // Border color on hover
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: colors.secondary[700], // Border color when focused
+                      borderColor: colors.secondary[500], // Border color when focused
                     },
                   },
                   // '& .MuiInputLabel-root': {
                   //   fontSize: "24px", // Label font
                   // },
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: colors.secondary[700], // Label color
+                    color: colors.secondary[500], // Label color
                   },
                 }}
               />
@@ -110,21 +109,25 @@ export default function SignUp() {
                 variant="contained"
                 sx={{
                   py: 1,
-                  my: 1.5,
-                  fontSize: "1rem",
+                  my: 2,
+                  fontSize: {xs: ".8rem", sm: "1rem"},
                   fontWeight: "600",
                   color: colors.background[100],
-                  background: colors.secondary[700],
+                  background: colors.secondary[500],
                   "&:hover": {
-                    backgroundColor: colors.secondary[800],
+                    backgroundColor: colors.secondary[600],
                     cursor: "pointer",
                   },
                 }}
               >
                 Sign up
+                {/* SVG icon of the enter icon */}
+                <Box component="span" sx={{pl: 1, display: "flex", alignItems: "center"}}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>
+                </Box>
               </Button>
 
-              <Typography variant="h3" textAlign={`center`} my={2}>
+              <Typography variant="h3" textAlign={`center`}>
                 or
               </Typography>
 
@@ -133,8 +136,8 @@ export default function SignUp() {
                 variant="contained"
                 sx={{
                   py: 1,
-                  my: 1.5,
-                  fontSize: "1rem",
+                  my: 2,
+                  fontSize: {xs: ".8rem", sm: "1rem"},
                   fontWeight: "600",
                   display: "flex",
                   color: colors.background[100],
