@@ -84,9 +84,9 @@ const page: FC = () => {
                   fontSize: { xs: ".8rem", sm: "1rem" },
                   fontWeight: "600",
                   color: colors.background[100],
-                  background: colors.background[900],
+                  background: colors.secondary[500],
                   "&:hover": {
-                    backgroundColor: colors.background[900],
+                    backgroundColor: colors.secondary[500],
                     cursor: "pointer",
                   },
                   width: "100%"
