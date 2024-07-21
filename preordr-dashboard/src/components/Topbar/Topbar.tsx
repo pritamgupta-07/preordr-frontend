@@ -13,7 +13,8 @@ const Topbar = () => {
     return (
         <Box
             sx={{
-                padding: "10px 60px",
+                marginRight: {md: "20px", xs: "10px"},
+                padding: "10px 20px",
                 width: "100%",
                 display: "flex",
                 justifyContent: "space-between",
@@ -23,7 +24,7 @@ const Topbar = () => {
             {/* Search field */}
             <Box
                 sx={{
-                    width: "400px",
+                    width: "40%",
                     position: "relative",
                 }}
             >

@@ -30,11 +30,11 @@ export default function Home() {
         >
             <Grid container>
                 {/* sidebar */}
-                <Grid item sm={3}>
+                <Grid item xs={2} sm={4} md={3}>
                     <Sidebar />
                 </Grid>
                 {/* MAIN */}
-                <Grid item sm={9}>
+                <Grid item xs={10} sm={8} md={9}>
                     {/* TOPBAR */}
                     <Box sx={{ width: "100%", height: "100%" }}>
                         <Topbar/>
