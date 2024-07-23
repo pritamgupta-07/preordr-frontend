@@ -4,7 +4,7 @@ import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 import items from "./sidebarData.js";
 
 const Sidebar = () => {
@@ -17,7 +17,7 @@ const Sidebar = () => {
 
     const [activePath, setActivePath] = useState(initialPath);
 
-    const handleItemClick = (path) => {
+    const handleItemClick = (path: string) => {
         setActivePath(path);
     };
 
@@ -25,45 +25,13 @@ const Sidebar = () => {
 
     return (
         <>
-            <style jsx global>{`
-                /* For WebKit browsers */
-                ::-webkit-scrollbar {
-                    width: 8px;
-                    height: 8px;
-                }
-                ::-webkit-scrollbar-track {
-                    background: ${colors.background[500]};
-                    border-radius: 10px;
-                }
-                ::-webkit-scrollbar-thumb {
-                    background-color: ${colors.primary[500]};
-                    border-radius: 10px;
-                    transition: background-color 0.3s ease;
-                }
-                ::-webkit-scrollbar-thumb:hover {
-                    background-color: ${colors.primary[700]};
-                }
-
-                /* For Firefox */
-                * {
-                    scrollbar-width: thin;
-                    scrollbar-color: ${colors.primary[500]} ${colors.background[500]};
-                }
-
-                /* Smooth scrolling */
-                html {
-                    scroll-behavior: smooth;
-                }
-            `}</style>
-
             {/* SIDEBAR */}
-            <Box
+            <Box 
                 sx={{
-                    background: colors.background[600],
                     width: "100%",
                     height: "100vh",
-                    padding: "12px",
                     overflow: "hidden",
+                    borderRight: `2px solid ${colors.background[600]}`,
                 }}
             >
                 <Box
@@ -102,25 +70,29 @@ const Sidebar = () => {
                             flexGrow: 1,
                             margin: "8px 0",
                             overflowY: "auto",
-                            '&::-webkit-scrollbar': {
-                                width: '8px',
+                            "&::-webkit-scrollbar": {
+                                width: "8px",
                             },
-                            '&::-webkit-scrollbar-track': {
+                            "&::-webkit-scrollbar-track": {
                                 background: colors.background[500],
-                                borderRadius: '10px',
+                                borderRadius: "10px",
                             },
-                            '&::-webkit-scrollbar-thumb': {
+                            "&::-webkit-scrollbar-thumb": {
                                 backgroundColor: colors.primary[500],
-                                borderRadius: '10px',
-                                transition: 'background-color 0.3s ease',
+                                borderRadius: "10px",
+                                transition: "background-color 0.3s ease",
                             },
-                            '&::-webkit-scrollbar-thumb:hover': {
+                            "&::-webkit-scrollbar-thumb:hover": {
                                 backgroundColor: colors.primary[700],
                             },
                         }}
                     >
                         {sidebarItems.map((item) => (
-                            <Link key={item.path} href={item.path} style={{textDecoration: "none"}}>
+                            <Link
+                                key={item.path}
+                                href={item.path}
+                                style={{ textDecoration: "none" }}
+                            >
                                 <Box
                                     onClick={() => handleItemClick(item.path)}
                                     sx={{
@@ -135,8 +107,14 @@ const Sidebar = () => {
                                         width: "100%",
                                         fontSize: "16px",
                                         textDecoration: "none",
-                                        color: activePath === item.path ? "white" : "black",
-                                        background: activePath === item.path ? colors.primary[500] : colors.background[500],
+                                        color:
+                                            activePath === item.path
+                                                ? "white"
+                                                : colors.textPrimary[500],
+                                        background:
+                                            activePath === item.path
+                                                ? colors.primary[500]
+                                                : colors.background[500],
                                         borderRadius: "4px",
                                         display: "flex",
                                         justifyContent: {
@@ -166,12 +144,17 @@ const Sidebar = () => {
                                             height="20px"
                                             viewBox="0 -960 960 960"
                                             width="20px"
-                                            fill={activePath === item.path ? "white" : "black"}
+                                            fill={
+                                                activePath === item.path
+                                                    ? "white"
+                                                    : colors.textPrimary[500]
+                                            }
                                         >
                                             <path d={item.iconSvgPath} />
                                         </svg>
                                     </Box>
-                                    <Box
+                                    <Typography
+                                        variant="h6"
                                         sx={{
                                             display: {
                                                 xs: "none",
@@ -180,7 +163,7 @@ const Sidebar = () => {
                                         }}
                                     >
                                         {item.name}
-                                    </Box>
+                                    </Typography>
                                 </Box>
                             </Link>
                         ))}

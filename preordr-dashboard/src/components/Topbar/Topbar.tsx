@@ -2,7 +2,6 @@ import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { tokens } from "@/theme/theme";
 import { useTheme } from "@emotion/react";
 import { Box, TextField } from "@mui/material";
-import React from "react";
 
 const Topbar = () => {
     const dispatch = useAppDispatch();
@@ -13,7 +12,6 @@ const Topbar = () => {
     return (
         <Box
             sx={{
-                marginRight: {md: "20px", xs: "10px"},
                 padding: "10px 20px",
                 width: "100%",
                 display: "flex",
@@ -70,7 +68,9 @@ const Topbar = () => {
                 {/* Notification Icon */}
                 <Box sx={{
                      position: "relative",
-                     top: "4px"
+                     top: "4px",
+                     cursor: "pointer",
+                     
                     }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,8 @@ const Topbar = () => {
                 </Box>
                 <Box sx={{
                      position: "relative",
-                     top: "4px"
+                     top: "4px",
+                     cursor: "pointer",
                     }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
