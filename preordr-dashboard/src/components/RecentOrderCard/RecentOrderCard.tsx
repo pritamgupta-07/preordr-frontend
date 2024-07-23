@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { tokens } from "@/theme/theme";
-import { useTheme } from "@emotion/react";
 import {
     Box,
     Table,
@@ -10,6 +9,7 @@ import {
     TableHead,
     TableRow,
     Typography,
+    useTheme
 } from "@mui/material";
 import recentOrders from "./RecentOrderData.js";
 

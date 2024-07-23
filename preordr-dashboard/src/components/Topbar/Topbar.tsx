@@ -1,7 +1,8 @@
 import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { tokens } from "@/theme/theme";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material";
 import { Box, TextField } from "@mui/material";
+import ToggleModeButton from "../ToggleMode/ToggleMode";
 
 const Topbar = () => {
     const dispatch = useAppDispatch();
@@ -55,7 +56,7 @@ const Topbar = () => {
                 </Box>
             </Box>
 
-            {/* Topbar input */}
+            {/* Topbar left */}
             <Box
                 sx={{
                     padding: "4px 0",
@@ -66,6 +67,7 @@ const Topbar = () => {
                 }}
             >
                 {/* Notification Icon */}
+                {/* <ToggleModeButton /> */}
                 <Box sx={{
                      position: "relative",
                      top: "4px",

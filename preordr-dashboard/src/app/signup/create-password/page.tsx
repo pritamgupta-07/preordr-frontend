@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import {
     Container,
     Box,
@@ -9,10 +9,8 @@ import {
     TextField,
 } from "@mui/material";
 import { tokens } from "@/theme/theme";
-import { useAppSelector } from "@/lib/store/hooks";
 
 const page = () => {
-    const mode = useAppSelector((state) => state.colorMode.mode);
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const [showPass, setShowPass] = useState<boolean>(false);

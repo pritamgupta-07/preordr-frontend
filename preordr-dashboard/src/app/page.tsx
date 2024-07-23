@@ -1,7 +1,6 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
-import { toggleMode } from "@/lib/store/features/colorMode/colorModeSlice";
 import {
     Box,
     Grid,

@@ -1,6 +1,6 @@
 "use client";
 import { Container, Box, useTheme, Typography, Button } from "@mui/material";
-import React, { FC } from "react";
+import{ FC } from "react";
 import { tokens } from "@/theme/theme";
 import { useAppSelector } from "@/lib/store/hooks";
 import OTPInput from "./otpinput";
