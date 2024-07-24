@@ -60,14 +60,14 @@ const Topbar = () => {
             <Box
                 sx={{
                     padding: "4px 0",
-                    width: "80px",
+                    width: "150px",
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
                 }}
             >
                 {/* Notification Icon */}
-                {/* <ToggleModeButton /> */}
+                <ToggleModeButton />
                 <Box sx={{
                      position: "relative",
                      top: "4px",

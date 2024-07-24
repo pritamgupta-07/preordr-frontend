@@ -1,5 +1,6 @@
 "use client";
 import { Box, OutlinedInput } from "@mui/material";
+import { MutableRefObject } from 'react';
 import { useRef, useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
 
 interface OTPInputProps {
@@ -10,7 +11,7 @@ interface OTPInputProps {
 
 const OTPInput: React.FC<OTPInputProps> = ({ length = 4, onOTPSubmit }) => {
     const [otp, setOTP] = useState<string[]>(new Array(length).fill(""));
-    const inputRefs: MutableRefObject<(HTMLInputElement | null)[]> = useRef([]);
+    const inputRefs: MutableRefObject<(HTMLInputElement | null)[]> = useRef(new Array(length).fill(null));;
     // Autofocus on the first input on page load
     useEffect(() => {
         if (inputRefs.current[0]) {
