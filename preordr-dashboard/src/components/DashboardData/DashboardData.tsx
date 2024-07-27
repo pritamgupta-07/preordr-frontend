@@ -54,7 +54,7 @@ const DashboardData = () => {
                         <DashboardPieChart />
                     </Grid>
                     <Grid item xs={3} md={2}>
-                            <DashboardSalesChart />
+                        <DashboardSalesChart />
                     </Grid>
                 </Grid>
             </Box>
