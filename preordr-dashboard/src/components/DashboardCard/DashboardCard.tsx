@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { tokens } from "@/theme/theme";
 import { Box, Typography, useTheme } from "@mui/material";
 
@@ -13,8 +12,6 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
     isIncreased,
     cardText,
 }) => {
-    const dispatch = useAppDispatch();
-    const mode = useAppSelector((state) => state.colorMode.mode);
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);

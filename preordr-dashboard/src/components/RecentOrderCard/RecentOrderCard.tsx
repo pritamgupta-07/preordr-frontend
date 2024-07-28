@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { tokens } from "@/theme/theme";
 import {
     Box,
@@ -14,8 +13,6 @@ import {
 import recentOrders from "./RecentOrderData.js";
 
 const RecentOrderCard = () => {
-    const dispatch = useAppDispatch();
-    const mode = useAppSelector((state) => state.colorMode.mode);
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);

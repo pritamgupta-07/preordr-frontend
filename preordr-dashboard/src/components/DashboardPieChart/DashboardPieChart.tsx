@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { tokens } from "@/theme/theme";
 import { Box, Typography, useTheme } from "@mui/material";
 import {
@@ -8,9 +7,6 @@ import {
 } from "@mui/x-charts";
 
 const DashboardPieChart = () => {
-    const dispatch = useAppDispatch();
-    const mode = useAppSelector((state) => state.colorMode.mode);
-
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const data = [

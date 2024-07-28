@@ -1,3 +1,4 @@
+"use client"
 import { Box, Grid } from "@mui/material";
 import DashboardCard from "../DashboardCard/DashboardCard";
 import RecentOrderCard from "../RecentOrderCard/RecentOrderCard";
@@ -7,7 +8,7 @@ import DashboardSalesChart from "../DashboardSalesChart/DashboardSalesChart";
 
 const DashboardData = () => {
     return (
-        <Box sx={{ width: "100%", padding: "0 20px", overflow: "auto" }}>
+        <Box sx={{ width: "100%", padding: "10px 20px", overflow: "auto" }}>
             {/* First Row */}
             <Box>
                 <Grid container spacing={2}>

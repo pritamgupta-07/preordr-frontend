@@ -7,6 +7,8 @@ import { useState } from "react";
 const OrderOverview = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    
+    // Temporary Data
     const [itemsList, setItemsList] = useState([
         {
             name: "Laptop",
@@ -33,6 +35,7 @@ const OrderOverview = () => {
             }}
         >
             {/* ORDER INFORMATION BOX */}
+            
             <Box
                 sx={{
                     width: "100%",
@@ -58,6 +61,7 @@ const OrderOverview = () => {
                         }}
                     >
                         {/* ORDER NUMBER */}
+                        
                         <Typography
                             variant="body1"
                             color={colors.textSecondary[600]}
@@ -68,10 +72,13 @@ const OrderOverview = () => {
                         </Typography>
 
                         {/* ORDER STATUS FLAG: { NEW, PREPARING, READY } */}
+                        
                         <OrderFlag status="new" />
                     </Box>
                 </Box>
-
+                        
+                {/* TOP CARD [TOTAL QUANTITY, DATA & TIME, DETAILS ICON] */}
+                
                 <Box
                     sx={{
                         display: "flex",
@@ -80,8 +87,12 @@ const OrderOverview = () => {
                         marginTop: { xs: "10px", sm: "0" },
                     }}
                 >
+                        {/* QUANTITY */}
+                        
                     <Typography fontSize={"16px"}>2 items</Typography>
-
+                    
+                    {/* DATE AND TIME */}
+                    
                     <Typography
                         fontSize={"16px"}
                         textAlign={"center"}
@@ -90,7 +101,8 @@ const OrderOverview = () => {
                         2 May 2024, 5:00 PM
                     </Typography>
 
-                    {/* ICON */}
+                    {/* DETAILS ICON */}
+                    
                     <Box sx={{ cursor: "pointer" }}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +118,7 @@ const OrderOverview = () => {
             </Box>
 
             {/* Order Overview Box */}
+            
             <Box
                 sx={{
                     width: "100%",
@@ -124,37 +137,39 @@ const OrderOverview = () => {
                         overflow: "auto",
                         padding: { xs: "8px", sm: "16px" }, 
                     }}
-                >
+                >   
+                    {/* THIS WILL SHOW THE NUMBER OF ITEMS PURCHASED */}
+                    
                     {itemsList.map((data, index) => (
                         <Box
                         key={index}
                         sx={{
                             display: "flex",
-                            flexDirection: "row", // Keep items in a row format
+                            flexDirection: "row", 
                             justifyContent: "space-between",
                             alignItems: "center",
-                            marginBottom: "10px", // Consistent margin bottom
+                            marginBottom: "10px", 
                         }}
                     >
                         <Box
                             sx={{
-                                fontSize: { xs: "14px", sm: "16px" }, // Adjust font size for different screen sizes
+                                fontSize: { xs: "14px", sm: "16px" }, 
                                 fontWeight: "600",
                                 color: colors.textPrimary[400],
-                                width: { xs: "100%", sm: "auto" }, // Full width on small screens
-                                textAlign: { xs: "center", sm: "left" }, // Center text on small screens
-                                marginBottom: { xs: "8px", sm: "0" }, // Margin bottom on small screens
+                                width: { xs: "100%", sm: "auto" }, 
+                                textAlign: { xs: "center", sm: "left" }, 
+                                marginBottom: { xs: "8px", sm: "0" }, 
                             }}
                         >
                             {data.quantity} x {data.name}
                         </Box>
                         <Box
                             sx={{
-                                fontSize: { xs: "14px", sm: "16px" }, // Adjust font size for different screen sizes
+                                fontSize: { xs: "14px", sm: "16px" }, 
                                 fontWeight: "600",
                                 color: colors.textPrimary[400],
-                                width: { xs: "100%", sm: "auto" }, // Full width on small screens
-                                textAlign: { xs: "center", sm: "right" }, // Center text on small screens
+                                width: { xs: "100%", sm: "auto" }, 
+                                textAlign: { xs: "center", sm: "right" }, 
                             }}
                         >
                             Rs. {data.price * data.quantity}
@@ -165,6 +180,7 @@ const OrderOverview = () => {
             </Box>
 
             {/* Bottom Box */}
+            
             <Box
                 sx={{
                     padding: "16px",
@@ -172,7 +188,9 @@ const OrderOverview = () => {
                     background: colors.surface[100],
                     flexShrink: 0,
                 }}
-            >
+            >   
+                {/* FIRST LINE WHICH INCLUDES [TOTAL, PAID OR CASH STATUS, TOTAL VALUE OF THE ORDER] */}
+                
                 <Box
                     sx={{
                         width: "100%",
@@ -218,11 +236,14 @@ const OrderOverview = () => {
                     >
                         Rs.{" "}
                         {itemsList.reduce(
-                            (acc, item) => acc + item.quantity * item.price,
+                            (acc, item) => acc + item.quantity * item.price, // THIS WILL ADD TOTAL VALUE OF ALL ITEMS
                             0
                         )}
                     </Typography>
                 </Box>
+                
+                {/* REJECT AND ACCEPT BUTTTON */}
+                
                 <Box
                     sx={{
                         display: "flex",
