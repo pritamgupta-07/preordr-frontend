@@ -10,6 +10,11 @@ body,
   font-family: "source sans pro", sans-serif;
 }
 
+::selection {
+  background-color: #ff6347;
+  color: #fff;
+}
+
 .app {
   display: flex;
   position: relative;

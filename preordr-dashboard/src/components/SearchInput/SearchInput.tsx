@@ -24,7 +24,7 @@ const SearchInput = ({width}: searchInputProps) => {
                     fontSize: "20px",
                 }}
                 placeholder="Search..."
-            ></TextField>
+            />
             {/* SEARCH ICON */}
             <Box
                 sx={{

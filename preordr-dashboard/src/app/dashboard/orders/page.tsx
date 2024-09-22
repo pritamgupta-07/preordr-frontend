@@ -7,8 +7,7 @@ const page = () => {
     return (
         <Box sx={{ width: "100%", padding: "0 20px", overflow: "auto" }}>
             {/* TOP BUTTONS */}
-            <Box
-                sx={{
+            <Box sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
