@@ -1,5 +1,6 @@
-import MenuCreateButtons from "@/components/MenuDetailsButtons/MenuCreateButtons";
-import UploadImage from "@/components/UploadImage/UploadImage";
+"use client";
+import MenuCreateButtons from "@/components/MenuDetails/MenuDetailsButtons/MenuCreateButtons";
+import UploadImage from "@/components/Extras/UploadImage/UploadImage";
 import {
     Box,
     Button,
@@ -12,9 +13,12 @@ import {
     TextField,
     Typography,
 } from "@mui/material";
-import React from "react";
+import { useState } from "react";
 
 const page = () => {
+    const [isVeg, setIsVeg] = useState<boolean>(false);
+    const [containsEgg, setContainsEgg] = useState<boolean>(false);
+    
     return (
         <Box
             sx={{
@@ -84,7 +88,7 @@ const page = () => {
                 {/* RIGHT SIDE: VEG, BEST SELLER, IMAGE */}
                 <Grid item xs={12} md={6}>
                     {/* SWITCHES */}
-                    <Box width="100%" sx={{display: "flex", gap: "18px"}}>
+                    <Box width="100%" sx={{ display: "flex", gap: "18px" }}>
                         {/* COLUMN  1 */}
                         <Box width={"50%"}>
                             {/* PURE VEG */}
@@ -97,10 +101,16 @@ const page = () => {
                                     justifyContent: "space-between",
                                 }}
                             >
-                                <Typography fontSize="16px" textTransform="capitalize">
+                                <Typography
+                                    fontSize="16px"
+                                    textTransform="capitalize"
+                                >
                                     Pure Veg
                                 </Typography>
-                                <Switch />
+                                <Switch
+                                    checked={isVeg}
+                                    onClick={() => {setIsVeg(!isVeg)}}
+                                />
                             </Box>
 
                             {/* BEST SELLER */}
@@ -113,13 +123,16 @@ const page = () => {
                                     justifyContent: "space-between",
                                 }}
                             >
-                                <Typography fontSize="16px" textTransform="capitalize">
+                                <Typography
+                                    fontSize="16px"
+                                    textTransform="capitalize"
+                                >
                                     Best Seller
                                 </Typography>
                                 <Switch />
                             </Box>
 
-                            {/* OTHER */}
+                            {/* CONTAINS EGG */}
                             <Box
                                 sx={{
                                     width: "100%",
@@ -129,8 +142,17 @@ const page = () => {
                                     justifyContent: "space-between",
                                 }}
                             >
-                                <Typography fontSize="16px" textTransform="capitalize">Contains Egg</Typography>
-                                <Switch />
+                                <Typography
+                                    fontSize="16px"
+                                    textTransform="capitalize"
+                                >
+                                    Contains Egg
+                                </Typography>
+                                <Switch
+                                    checked={isVeg? false : containsEgg}
+                                    disabled={isVeg ? true : false}
+                                    onChange={() => setContainsEgg(!containsEgg)}
+                                />
                             </Box>
                         </Box>
 
@@ -146,12 +168,15 @@ const page = () => {
                                     justifyContent: "space-between",
                                 }}
                             >
-                                <Typography fontSize="16px"  textTransform="capitalize">
+                                <Typography
+                                    fontSize="16px"
+                                    textTransform="capitalize"
+                                >
                                     available
                                 </Typography>
                                 <Switch />
                             </Box>
-                            
+
                             {/* IS POPULAR */}
                             <Box
                                 sx={{
@@ -162,7 +187,10 @@ const page = () => {
                                     justifyContent: "space-between",
                                 }}
                             >
-                                <Typography fontSize="16px"  textTransform="capitalize">
+                                <Typography
+                                    fontSize="16px"
+                                    textTransform="capitalize"
+                                >
                                     Popular
                                 </Typography>
                                 <Switch />

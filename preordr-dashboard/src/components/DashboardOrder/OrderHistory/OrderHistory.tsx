@@ -1,7 +1,7 @@
 "use client";
 import { tokens } from "@/theme/theme";
 import { Box, useTheme } from "@mui/material";
-import SearchInput from "../SearchInput/SearchInput";
+import SearchInput from "../../Extras/SearchInput/SearchInput";
 import OrderCard from "./OrderCard";
 import orderHistory from "./OrderHistoryData";
 

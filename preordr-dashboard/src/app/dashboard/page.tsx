@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
-import DashboardData from "@/components/DashboardData/DashboardData";
-import DashboardSkeleton from "@/components/DashboardLoader/DashboardSkeleton";
+import DashboardData from "@/components/Dashboard/DashboardData/DashboardData";
+import DashboardSkeleton from "@/components/Dashboard/DashboardLoader/DashboardSkeleton";
 
 export default function Home() {
     const [loading, setLoading] = useState(true);

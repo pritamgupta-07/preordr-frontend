@@ -1,7 +1,7 @@
 "use client"
 import { Box, Grid } from "@mui/material";
 import DashboardCard from "../DashboardCard/DashboardCard";
-import RecentOrderCard from "../RecentOrderCard/RecentOrderCard";
+import RecentOrderCard from "../../DashboardOrder/RecentOrderCard/RecentOrderCard";
 import TopSellingItems from "../TopSellingItems/TopSellingItems";
 import DashboardPieChart from "../DashboardPieChart/DashboardPieChart";
 import DashboardSalesChart from "../DashboardSalesChart/DashboardSalesChart";

@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { tokens } from "@/theme/theme";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
-import SearchInput from "../SearchInput/SearchInput";
+import SearchInput from "../../Extras/SearchInput/SearchInput";
 import Link from "next/link";
 
 const MenuDetailsTopbar = () => {

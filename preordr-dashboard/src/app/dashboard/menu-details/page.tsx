@@ -1,5 +1,5 @@
-import MenuDetailsCard from '@/components/MenuDetailsCard/MenuDetailsCard'
-import MenuDetailsTopbar from '@/components/MenuDetailsTopbar/MenuDetailsTopbar'
+import MenuDetailsCard from '@/components/MenuDetails/MenuDetailsCard/MenuDetailsCard'
+import MenuDetailsTopbar from '@/components/MenuDetails/MenuDetailsTopbar/MenuDetailsTopbar'
 import { Box } from '@mui/material'
 import React from 'react'
 

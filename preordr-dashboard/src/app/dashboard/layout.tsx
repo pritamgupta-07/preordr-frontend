@@ -1,8 +1,8 @@
 "use client";
 import { Box, Grid, useTheme } from "@mui/material";
 import { tokens } from "@/theme/theme";
-import Sidebar from "@/components/sidebar/Sidebar";
-import Topbar from "@/components/Topbar/Topbar";
+import Sidebar from "@/components/Extras/sidebar/Sidebar";
+import Topbar from "@/components/Extras/Topbar/Topbar";
 import { ReactNode } from "react";
 
 type LayoutProps = {

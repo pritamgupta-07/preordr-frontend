@@ -1,6 +1,6 @@
-import OrderHistory from "@/components/OrderHistory/OrderHistory";
-import OrderOverview from "@/components/OrderOvereview/OrderOverview";
-import OrderStatusButton from "@/components/OrderStatusButton/OrderStatusButton";
+import OrderHistory from "@/components/DashboardOrder/OrderHistory/OrderHistory";
+import OrderOverview from "@/components/DashboardOrder/OrderOvereview/OrderOverview";
+import OrderStatusButton from "@/components/DashboardOrder/OrderStatusButton/OrderStatusButton";
 import { Box, Grid } from "@mui/material";
 
 const page = () => {
