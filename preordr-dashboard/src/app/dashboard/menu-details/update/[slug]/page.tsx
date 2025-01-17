@@ -25,6 +25,7 @@ const page = () => {
                 width: "100%",
                 padding: { xs: "10px", md: "0 20px" },
                 overflow: "auto",
+                margin: "24px 0"
             }}
         >
             <Typography
