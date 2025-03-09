@@ -67,7 +67,7 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 4, onOTPSubmit }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 2,
-            }}
+            }} 
         >
             {otp.map((value, i) => (
                 <OutlinedInput
