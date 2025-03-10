@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Export the Mode type
 export type Mode = 'light' | 'dark';
 
 export interface ModeState {
@@ -8,18 +7,18 @@ export interface ModeState {
 }
 
 const initialState: ModeState = {
-  mode: 'light',
-};
-
-const modeSlice = createSlice({
-  name: 'colorMode',
-  initialState,
-  reducers: {
-    toggleMode(state) {
-      state.mode = state.mode === 'light' ? 'dark' : 'light';
+    mode: 'light',
+  };
+  
+  const modeSlice = createSlice({
+    name: 'colorMode',
+    initialState,
+    reducers: {
+      toggleMode(state) {
+        state.mode = state.mode === 'light' ? 'dark' : 'light';
+      },
     },
-  },
-});
-
-export const { toggleMode } = modeSlice.actions;
-export default modeSlice.reducer;
+  });
+  
+  export const { toggleMode } = modeSlice.actions;
+  export default modeSlice.reducer;
