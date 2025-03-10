@@ -237,7 +237,7 @@ export const tokens = (mode: Mode) => ({
 });
 
 
-export const themeSettings = (mode: Mode)=> {
+export const themeSettings = (mode: Mode) => {
   const colors = tokens(mode);
   return {
     palette: {
