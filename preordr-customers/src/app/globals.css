@@ -1,3 +1,213 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Light Theme Colors */
+  --color-primary-100: #ffe0da;
+  --color-primary-200: #ffc1b5;
+  --color-primary-300: #ffa191;
+  --color-primary-400: #ff826c;
+  --color-primary-500: #ff6347;
+  --color-primary-600: #cc4f39;
+  --color-primary-700: #993b2b;
+  --color-primary-800: #66281c;
+  --color-primary-900: #33140e;
+
+  --color-secondary-100: #d6f5d6;
+  --color-secondary-200: #adebad;
+  --color-secondary-300: #84e184;
+  --color-secondary-400: #5bd75b;
+  --color-secondary-500: #32cd32;
+  --color-secondary-600: #28a428;
+  --color-secondary-700: #1e7b1e;
+  --color-secondary-800: #145214;
+  --color-secondary-900: #0a290a;
+
+  --color-background-100: #ffffff;
+  --color-background-200: #ffffff;
+  --color-background-300: #ffffff;
+  --color-background-400: #ffffff;
+  --color-background-500: #ffffff;
+  --color-background-600: #cccccc;
+  --color-background-700: #999999;
+  --color-background-800: #666666;
+  --color-background-900: #333333;
+
+  --color-surface-100: #fdfdfd;
+  --color-surface-200: #fbfbfb;
+  --color-surface-300: #f9f9f9;
+  --color-surface-400: #f7f7f7;
+  --color-surface-500: #f5f5f5;
+  --color-surface-600: #c4c4c4;
+  --color-surface-700: #939393;
+  --color-surface-800: #626262;
+  --color-surface-900: #313131;
+
+  --color-text-primary-100: #d3d3d3;
+  --color-text-primary-200: #a6a6a6;
+  --color-text-primary-300: #7a7a7a;
+  --color-text-primary-400: #4d4d4d;
+  --color-text-primary-500: #212121;
+  --color-text-primary-600: #1a1a1a;
+  --color-text-primary-700: #141414;
+  --color-text-primary-800: #0d0d0d;
+  --color-text-primary-900: #070707;
+
+  --color-text-secondary-100: #e3e3e3;
+  --color-text-secondary-200: #c8c8c8;
+  --color-text-secondary-300: #acacac;
+  --color-text-secondary-400: #919191;
+  --color-text-secondary-500: #757575;
+  --color-text-secondary-600: #5e5e5e;
+  --color-text-secondary-700: #464646;
+  --color-text-secondary-800: #2f2f2f;
+  --color-text-secondary-900: #171717;
+
+  --color-orange-accent-100: #ffedcc;
+  --color-orange-accent-200: #ffdb99;
+  --color-orange-accent-300: #ffc966;
+  --color-orange-accent-400: #ffb733;
+  --color-orange-accent-500: #ffa500;
+  --color-orange-accent-600: #cc8400;
+  --color-orange-accent-700: #996300;
+  --color-orange-accent-800: #664200;
+  --color-orange-accent-900: #332100;
+
+  --color-yellow-accent-100: #fff7cc;
+  --color-yellow-accent-200: #ffef99;
+  --color-yellow-accent-300: #ffe766;
+  --color-yellow-accent-400: #ffdf33;
+  --color-yellow-accent-500: #ffd700;
+  --color-yellow-accent-600: #ccac00;
+  --color-yellow-accent-700: #998100;
+  --color-yellow-accent-800: #665600;
+  --color-yellow-accent-900: #332b00;
+
+  --color-red-accent-100: #ffcccc;
+  --color-red-accent-200: #ff9999;
+  --color-red-accent-300: #ff6666;
+  --color-red-accent-400: #ff3333;
+  --color-red-accent-500: #ff0000;
+  --color-red-accent-600: #cc0000;
+  --color-red-accent-700: #990000;
+  --color-red-accent-800: #660000;
+  --color-red-accent-900: #330000;
+
+  --color-blue-accent-100: #ccdfff;
+  --color-blue-accent-200: #99bfff;
+  --color-blue-accent-300: #669fff;
+  --color-blue-accent-400: #337fff;
+  --color-blue-accent-500: #0060ff;
+  --color-blue-accent-600: #004dcc;
+  --color-blue-accent-700: #003999;
+  --color-blue-accent-800: #002666;
+  --color-blue-accent-900: #001333;
+
+  --color-gradient-100: rgba(28, 28, 28, 0.1);
+  --color-gradient-200: rgba(28, 28, 28, 0.2);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Colors */
+  --color-primary-100: #33140e;
+  --color-primary-200: #66281c;
+  --color-primary-300: #993b2b;
+  --color-primary-400: #cc4f39;
+  --color-primary-500: #ff6347;
+  --color-primary-600: #ff826c;
+  --color-primary-700: #ffa191;
+  --color-primary-800: #ffc1b5;
+  --color-primary-900: #ffe0da;
+
+  --color-secondary-100: #0a290a;
+  --color-secondary-200: #145214;
+  --color-secondary-300: #1e7b1e;
+  --color-secondary-400: #28a428;
+  --color-secondary-500: #32cd32;
+  --color-secondary-600: #5bd75b;
+  --color-secondary-700: #84e184;
+  --color-secondary-800: #adebad;
+  --color-secondary-900: #d6f5d6;
+
+  --color-background-100: #040404;
+  --color-background-200: #070707;
+  --color-background-300: #0b0b0b;
+  --color-background-400: #0e0e0e;
+  --color-background-500: #121212;
+  --color-background-600: #414141;
+  --color-background-700: #717171;
+  --color-background-800: #a0a0a0;
+  --color-background-900: #d0d0d0;
+
+  --color-surface-100: #060606;
+  --color-surface-200: #0c0c0c;
+  --color-surface-300: #121212;
+  --color-surface-400: #181818;
+  --color-surface-500: #1e1e1e;
+  --color-surface-600: #4b4b4b;
+  --color-surface-700: #787878;
+  --color-surface-800: #a5a5a5;
+  --color-surface-900: #d2d2d2;
+
+  --color-text-primary-100: #2d2d2d;
+  --color-text-primary-200: #5a5a5a;
+  --color-text-primary-300: #868686;
+  --color-text-primary-400: #b3b3b3;
+  --color-text-primary-500: #e0e0e0;
+  --color-text-primary-600: #e6e6e6;
+  --color-text-primary-700: #ececec;
+  --color-text-primary-800: #f3f3f3;
+  --color-text-primary-900: #f9f9f9;
+
+  --color-text-secondary-100: #232323;
+  --color-text-secondary-200: #464646;
+  --color-text-secondary-300: #6a6a6a;
+  --color-text-secondary-400: #8d8d8d;
+  --color-text-secondary-500: #b0b0b0;
+  --color-text-secondary-600: #c0c0c0;
+  --color-text-secondary-700: #d0d0d0;
+  --color-text-secondary-800: #dfdfdf;
+  --color-text-secondary-900: #efefef;
+
+  --color-orange-accent-100: #332100;
+  --color-orange-accent-200: #664200;
+  --color-orange-accent-300: #996300;
+  --color-orange-accent-400: #cc8400;
+  --color-orange-accent-500: #ffa500;
+  --color-orange-accent-600: #ffb733;
+  --color-orange-accent-700: #ffc966;
+  --color-orange-accent-800: #ffdb99;
+  --color-orange-accent-900: #ffedcc;
+
+  --color-yellow-accent-100: #332b00;
+  --color-yellow-accent-200: #665600;
+  --color-yellow-accent-300: #998100;
+  --color-yellow-accent-400: #ccac00;
+  --color-yellow-accent-500: #ffd700;
+  --color-yellow-accent-600: #ffdf33;
+  --color-yellow-accent-700: #ffe766;
+  --color-yellow-accent-800: #ffef99;
+  --color-yellow-accent-900: #fff7cc;
+
+  --color-red-accent-100: #330000;
+  --color-red-accent-200: #660000;
+  --color-red-accent-300: #990000;
+  --color-red-accent-400: #cc0000;
+  --color-red-accent-500: #ff0000;
+  --color-red-accent-600: #ff3333;
+  --color-red-accent-700: #ff6666;
+  --color-red-accent-800: #ff9999;
+  --color-red-accent-900: #ffcccc;
+
+  --color-blue-accent-100: #001333;
+  --color-blue-accent-200: #002666;
+  --color-blue-accent-300: #003999;
+  --color-blue-accent-400: #004dcc;
+  --color-blue-accent-500: #0060ff;
+  --color-blue-accent-600: #337fff;
+  --color-blue-accent-700: #669fff;
+  --color-blue-accent-800: #99bfff;
+  --color-blue-accent-900: #ccdfff;
+
+  --color-gradient-100: rgba(255, 255, 255, 0.1);
+  --color-gradient-200: rgba(255, 255, 255, 0.2);
+}

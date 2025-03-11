@@ -1,22 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Export the Mode type
-export type Mode = 'light' | 'dark';
+export type Mode = "light" | "dark";
 
 export interface ModeState {
   mode: Mode;
 }
 
+const savedTheme = localStorage.getItem("theme") as Mode || "light";
+
 const initialState: ModeState = {
-  mode: 'light',
+  mode: savedTheme,
 };
 
 const modeSlice = createSlice({
-  name: 'colorMode',
+  name: "colorMode",
   initialState,
   reducers: {
     toggleMode(state) {
-      state.mode = state.mode === 'light' ? 'dark' : 'light';
+      state.mode = state.mode === "light" ? "dark" : "light";
+      localStorage.setItem("theme", state.mode); 
     },
   },
 });
