@@ -5,6 +5,7 @@ import { toggleMode } from "@/lib/store/features/colorMode/colorModeSlice";
 import { Mode } from "@/lib/store/features/colorMode/colorModeSlice";
 import { useAppDispatch } from "@/lib/store/hooks";
 import { useEffect } from "react";
+import Navbar from "@/components/navbar/Navbar";
 
 export default function Home() {
   const dispatch = useAppDispatch();
@@ -22,9 +23,8 @@ export default function Home() {
   };
 
   return (
-    <div className={`p-4 h-screen bg-[var(--color-surface-900)]`}>
-      <p className="bg-rek-400">Current Mode: {mode}</p>
-      <button onClick={handleToggleMode}>Toggle Mode</button>
+    <div className={`p-4 h-screen bg-[var(--color-surface-300)] text-[var(--color-text-primary-900)]`}>
+      <Navbar />
     </div>
   );
 }
