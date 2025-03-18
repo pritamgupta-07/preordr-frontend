@@ -13,7 +13,7 @@ const Navbar = () => {
 
       {/* Location Section */}
       <div className="flex items-center gap-2">
-        <h4 className="hidden sm:block">Place</h4>
+        <h4 className="hidden sm:block text-[var(--color-text-primary-900)]">Place</h4>
         {/* Location Icon */}
         <span className="flex items-center">
           <svg
@@ -101,7 +101,7 @@ const Navbar = () => {
         {/* CTA Button */}
         <Link
           href="/"
-          className="px-4 py-2 bg-[var(--color-primary-500)] text-white rounded-lg hover:bg-[var(--color-primary-600)] transition-colors"
+          className="px-4 py-2 bg-[var(--color-primary-500)] text-[var(--color-text-primary-50)] rounded-lg hover:bg-[var(--color-primary-600)] transition-colors"
         >
           Sign In
         </Link>

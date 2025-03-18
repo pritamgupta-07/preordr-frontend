@@ -6,6 +6,7 @@ import { Mode } from "@/lib/store/features/colorMode/colorModeSlice";
 import { useAppDispatch } from "@/lib/store/hooks";
 import { useEffect } from "react";
 import Navbar from "@/components/navbar/Navbar";
+import TopRatedRestaurants from "@/components/Sections/TopRatedRestaurants/TopRatedRestaurants";
 
 export default function Home() {
   const dispatch = useAppDispatch();
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <div className={`p-4 h-screen bg-[var(--color-surface-300)] text-[var(--color-text-primary-900)]`}>
       <Navbar />
+      <TopRatedRestaurants />
     </div>
   );
 }

@@ -7,10 +7,8 @@ export interface ModeState {
   mode: Mode;
 }
 
-const savedTheme = localStorage.getItem("theme") as Mode || "light";
-
 const initialState: ModeState = {
-  mode: savedTheme,
+  mode: "light",
 };
 
 const modeSlice = createSlice({

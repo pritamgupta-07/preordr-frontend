@@ -42,6 +42,7 @@
   --color-surface-800: #626262;
   --color-surface-900: #313131;
 
+  --color-text-primary-50: #ffffff;
   --color-text-primary-100: #d3d3d3;
   --color-text-primary-200: #a6a6a6;
   --color-text-primary-300: #7a7a7a;
@@ -148,6 +149,7 @@
   --color-surface-800: #a5a5a5;
   --color-surface-900: #d2d2d2;
 
+  --color-text-primary-50: #000000;
   --color-text-primary-100: #2d2d2d;
   --color-text-primary-200: #5a5a5a;
   --color-text-primary-300: #868686;
@@ -210,4 +212,13 @@
 
   --color-gradient-100: rgba(255, 255, 255, 0.1);
   --color-gradient-200: rgba(255, 255, 255, 0.2);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
