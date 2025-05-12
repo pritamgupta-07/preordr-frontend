@@ -16,6 +16,7 @@ const DashboardData = () => {
                         <DashboardCard
                             data={109}
                             isIncreased={true}
+                            showTrend={true}
                             cardText="Weekly Sales"
                         />
                     </Grid>
@@ -23,6 +24,7 @@ const DashboardData = () => {
                         <DashboardCard
                             data={46}
                             isIncreased={false}
+                            showTrend={true}
                             cardText="Daily Sales"
                         />
                     </Grid>
@@ -30,6 +32,7 @@ const DashboardData = () => {
                         <DashboardCard
                             data={1542}
                             isIncreased={true}
+                            showTrend={true}
                             cardText="Montly Sales"
                         />
                     </Grid>

@@ -103,14 +103,16 @@ const PaymentTable = () => {
                                 py: 1,
                                 px: 3,
                                 color: "#fff",
-                                background: colors.blueAccent[500],
+                                background: colors.yellowAccent[500],
+                                fontWeight: "bolder",
+                                fontSize: "12px",
                                 "&:hover": {
-                                    background: colors.blueAccent[600],
+                                    background: colors.yellowAccent[600],
                                 },
                                 "&:active": {
                                     background: "transparent",
-                                    outline: `1px solid ${colors.blueAccent[500]}`,
-                                    color: colors.blueAccent[500]
+                                    outline: `1px solid ${colors.yellowAccent[500]}`,
+                                    color: colors.yellowAccent[500]
                                 }
                             }}
                         >

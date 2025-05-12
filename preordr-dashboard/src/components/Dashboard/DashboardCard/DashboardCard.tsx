@@ -4,14 +4,18 @@ import { Box, Typography, useTheme } from "@mui/material";
 
 interface DashboardCardProps {
     data: number;
-    isIncreased: boolean;
+    isIncreased?: boolean;
     cardText: string;
+    showTrend?: boolean;
+    isShowColored?: boolean;
 }
 
 const DashboardCard: React.FC<DashboardCardProps> = ({
     data,
-    isIncreased,
+    isIncreased = false,
     cardText,
+    showTrend = false,
+    isShowColored = false,
 }) => {
 
     const theme = useTheme();
@@ -38,7 +42,8 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
                     gap: "8px",
                 }}
             >
-                <svg
+                {
+                    showTrend && <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="32px"
                     viewBox="0 -960 960 960"
@@ -57,14 +62,17 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
                         }
                     />
                 </svg>
+                }
                 <Typography
                 variant="h1"
                     sx={{fontSize: {xs: 24, sm: 30, md: 42}}}
                     fontWeight={600}
                     color={
+                        showTrend || isShowColored ?
                         isIncreased
                             ? colors.secondary[500]
                             : colors.redAccent[500]
+                        : colors.textPrimary[600]
                     }
                 >
                     {data}

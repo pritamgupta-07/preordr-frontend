@@ -5,13 +5,7 @@ import {
     Box,
     Button,
     Grid,
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableRow,
     Typography,
-    useTheme,
 } from "@mui/material";
 
 const page = () => {
@@ -25,7 +19,7 @@ const page = () => {
                     alignItems: "center",
                 }}
             >
-                <Typography variant="h3">Payout</Typography>
+                <Typography variant="h2" sx={{fontWeight: 700}}>Payout</Typography>
 
                 <Button variant="outlined">+ Add Account</Button>
             </Box>
@@ -34,15 +28,15 @@ const page = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <DashboardCard
-                            data={109}
-                            isIncreased={true}
+                            data={2500}
                             cardText="Account Balance"
+                            isShowColored={true}
+                            isIncreased={true}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <DashboardCard
-                            data={46}
-                            isIncreased={false}
+                            data={500}
                             cardText="Withdrawal Balance"
                         />
                     </Grid>
